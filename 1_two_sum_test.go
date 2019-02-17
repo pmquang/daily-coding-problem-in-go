@@ -8,9 +8,9 @@ var tests = []struct {
 	expected bool
 }{
 	{[]int{10, 15, 3, 7}, 17, true},
-	//{[]int{10, 15, 3, 7}, 10, true},
-	//{[]int{10, 15, 3, 7}, 3, false},
-	//{[]int{10, 15, 3, 7}, 26, false},
+	{[]int{10, 15, 3, 7}, 10, true},
+	{[]int{10, 15, 3, 7}, 3, false},
+	{[]int{10, 15, 3, 7}, 26, false},
 }
 
 func TestTwoSum(t *testing.T) {
