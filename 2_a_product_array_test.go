@@ -17,3 +17,11 @@ func TestProductArray(t *testing.T) {
 		}
 	}
 }
+
+func TestProductArray2(t *testing.T) {
+	for _, tc := range productArrayTests {
+		if actual := ProductArray2(tc.in); !Equal(actual, tc.out) {
+			t.Errorf("%v, expected %v, got %v", tc.in, tc.out, actual)
+		}
+	}
+}
