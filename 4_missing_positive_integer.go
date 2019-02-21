@@ -1,11 +1,12 @@
 package daily_coding_problem_in_go
 
 func MissingPositiveInt(arr []int) int {
-	for i, e := range arr {
-		if e <= 0 || e >= len(arr) {
+	for i := 0; i < len(arr); {
+		if arr[i] < 1 || arr[i] >= len(arr) || arr[i] == i+1 {
+			i++
 			continue
 		}
-		arr[e-1], arr[i] = arr[i], arr[e-1]
+		arr[arr[i]-1], arr[i] = arr[i], arr[arr[i]-1]
 	}
 
 	for i := range arr {

@@ -11,6 +11,7 @@ var missingPositiveIntTests = []struct {
 	{[]int{1, 2, 3}, 4},
 	{[]int{3, 2, 1}, 4},
 	{[]int{-1, 4, 2, 3, 1}, 5},
+	{[]int{3, 2, 4, -1, 1}, 5},
 }
 
 func TestMissingPositiveInt(t *testing.T) {
