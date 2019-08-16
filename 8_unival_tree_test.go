@@ -13,7 +13,7 @@ func TestCountUnivalTree(t *testing.T) {
 		},
 	}
 	expected := 5
-	if actual := CountUnivalTree(tree); actual != expected {
+	if actual, _ := CountUnivalTree(tree); actual != expected {
 		t.Errorf("expected %v, got %v", expected, actual)
 	}
 }
