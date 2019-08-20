@@ -1,8 +1,10 @@
-package daily_coding_problem_in_go
+package problem
 
 import (
 	"sync"
 	"testing"
+
+	"github.com/khoi/daily-coding-problem-in-go/helper"
 )
 
 func TestSchedule(t *testing.T) {
@@ -24,7 +26,7 @@ func TestSchedule(t *testing.T) {
 	}
 	wg.Wait()
 
-	if !Equal(expected, results) {
+	if !helper.Equal(expected, results) {
 		t.Errorf("expected %v, got %v", expected, results)
 	}
 }

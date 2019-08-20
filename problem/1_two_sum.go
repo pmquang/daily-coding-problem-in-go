@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package problem
 
 func TwoSum(nums []int, k int) bool {
 	m := make(map[int]struct{})

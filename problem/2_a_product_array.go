@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package problem
 
 func ProductArray(arr []int) []int {
 	product := arr[0]

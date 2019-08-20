@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package problem
 
 func LargestNonAdjacentSum(l []int) int {
 	if len(l) == 0 {

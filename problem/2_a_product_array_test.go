@@ -1,6 +1,10 @@
-package daily_coding_problem_in_go
+package problem
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/khoi/daily-coding-problem-in-go/helper"
+)
 
 var productArrayTests = []struct {
 	in  []int
@@ -12,7 +16,7 @@ var productArrayTests = []struct {
 
 func TestProductArray(t *testing.T) {
 	for _, tc := range productArrayTests {
-		if actual := ProductArray(tc.in); !Equal(actual, tc.out) {
+		if actual := ProductArray(tc.in); !helper.Equal(actual, tc.out) {
 			t.Errorf("%v, expected %v, got %v", tc.in, tc.out, actual)
 		}
 	}
@@ -20,7 +24,7 @@ func TestProductArray(t *testing.T) {
 
 func TestProductArray2(t *testing.T) {
 	for _, tc := range productArrayTests {
-		if actual := ProductArray2(tc.in); !Equal(actual, tc.out) {
+		if actual := ProductArray2(tc.in); !helper.Equal(actual, tc.out) {
 			t.Errorf("%v, expected %v, got %v", tc.in, tc.out, actual)
 		}
 	}

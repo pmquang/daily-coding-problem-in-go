@@ -1,6 +1,10 @@
-package daily_coding_problem_in_go
+package problem
 
-import "testing"
+import (
+	"testing"
+
+	"github.com/khoi/daily-coding-problem-in-go/helper"
+)
 
 var stampTests = []struct {
 	in  []int
@@ -15,7 +19,7 @@ var stampTests = []struct {
 
 func TestStamp(t *testing.T) {
 	for _, tc := range stampTests {
-		if actual := Stamp(tc.in); !Equal(actual, tc.out) {
+		if actual := Stamp(tc.in); !helper.Equal(actual, tc.out) {
 			t.Errorf("expect %v got %v", tc.out, actual)
 		}
 	}

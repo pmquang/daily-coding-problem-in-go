@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package problem
 
 func Stamp(arr []int) []int {
 	m := make(map[int]int)

@@ -1,7 +1,9 @@
-package daily_coding_problem_in_go
+package problem
 
 import (
 	"testing"
+
+	"github.com/khoi/daily-coding-problem-in-go/helper"
 )
 
 var xorLinkedListTests = [][]int{
@@ -15,7 +17,7 @@ func TestXorLinkedList(t *testing.T) {
 		for _, e := range tc[1:] {
 			a = a.Insert(e)
 		}
-		if actual, expected := a.ToSlice(), Reverse(tc); !Equal(actual, expected) {
+		if actual, expected := a.ToSlice(), helper.Reverse(tc); !helper.Equal(actual, expected) {
 			t.Errorf("expecting %v, got %v", expected, actual)
 		}
 	}

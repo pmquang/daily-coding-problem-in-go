@@ -1,13 +1,13 @@
-package daily_coding_problem_in_go
+package problem
 
 type Pair struct {
-	First int
+	First  int
 	Second int
 }
 
 func Cons(a, b int) func() Pair {
 	return func() Pair {
-		return Pair{a,b}
+		return Pair{a, b}
 	}
 }
 

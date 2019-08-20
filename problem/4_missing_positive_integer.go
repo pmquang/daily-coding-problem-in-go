@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package problem
 
 func MissingPositiveInt(arr []int) int {
 	for i := 0; i < len(arr); {

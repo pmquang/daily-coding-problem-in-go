@@ -1,4 +1,4 @@
-package daily_coding_problem_in_go
+package helper
 
 func Equal(a, b []int) bool {
 	if len(a) != len(b) {
