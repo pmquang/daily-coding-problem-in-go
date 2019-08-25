@@ -9,7 +9,7 @@ import (
 	"github.com/khoi/daily-coding-problem-in-go/helper"
 )
 
-func CountLongestSubStr(str string, k int) int {
+func CountLongestSubStrWithKUniqueChars(str string, k int) int {
 	if len(str) == 0 {
 		return 0
 	}

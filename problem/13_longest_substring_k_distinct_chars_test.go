@@ -4,7 +4,7 @@ import (
 	"testing"
 )
 
-var longestSubstrTests = []struct {
+var longestSubstrWithKUniqueCharsTests = []struct {
 	s   string
 	k   int
 	out int
@@ -16,9 +16,9 @@ var longestSubstrTests = []struct {
 	{"aaabbb", 3, 0},
 }
 
-func TestCountLongestSubStr(t *testing.T) {
-	for _, tc := range longestSubstrTests {
-		if actual, expected := CountLongestSubStr(tc.s, tc.k), tc.out; actual != expected {
+func TestCountLongestSubStrWithKUniqueChars(t *testing.T) {
+	for _, tc := range longestSubstrWithKUniqueCharsTests {
+		if actual, expected := CountLongestSubStrWithKUniqueChars(tc.s, tc.k), tc.out; actual != expected {
 			t.Errorf("expected %v, got %v", expected, actual)
 		}
 	}
