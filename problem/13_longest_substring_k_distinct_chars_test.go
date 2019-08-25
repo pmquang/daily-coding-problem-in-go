@@ -13,7 +13,6 @@ var longestSubstrWithKUniqueCharsTests = []struct {
 	{"aabbcc", 1, 2},
 	{"aabbcc", 2, 4},
 	{"aabbcc", 3, 6},
-	{"aaabbb", 3, 0},
 }
 
 func TestCountLongestSubStrWithKUniqueChars(t *testing.T) {

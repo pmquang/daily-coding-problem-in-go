@@ -5,9 +5,7 @@
 //For example, given s = "abcba" and k = 2, the longest substring with k distinct characters is "bcb".
 package problem
 
-import (
-	"github.com/khoi/daily-coding-problem-in-go/helper"
-)
+import "github.com/khoi/daily-coding-problem-in-go/helper"
 
 func CountLongestSubStrWithKUniqueChars(str string, k int) int {
 	if len(str) == 0 {
@@ -15,13 +13,10 @@ func CountLongestSubStrWithKUniqueChars(str string, k int) int {
 	}
 
 	i := 0
-	j := 0
 	maxLength := 0
-	dict := make(map[uint8]int)
+	dict := make(map[rune]int)
 
-	for j < len(str) {
-		c := str[j]
-
+	for j, c := range str {
 		val, ok := dict[c]
 
 		if ok {
@@ -30,23 +25,16 @@ func CountLongestSubStrWithKUniqueChars(str string, k int) int {
 			dict[c] = 1
 		}
 
-		if len(dict) > k {
-			dict[str[i]] -= 1
-			if dict[str[i]] == 0 {
-				delete(dict, str[i])
+		if len(dict) <= k {
+			maxLength = helper.Max(maxLength, j-i+1)
+		} else {
+			s := rune(str[i])
+			dict[s] -= 1
+			if dict[s] == 0 {
+				delete(dict, s)
 			}
 			i++
 		}
-
-		if len(dict) == k {
-			sum := 0
-			for _, v := range dict {
-				sum += v
-			}
-			maxLength = helper.Max(sum, maxLength)
-		}
-
-		j++
 	}
 
 	return maxLength
