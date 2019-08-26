@@ -7,10 +7,6 @@ import (
 )
 
 func main() {
-	t := problem.NewTrie()
-	t.Insert("deer")
-	t.Insert("de")
-	t.Insert("deal")
-	b := t.Search("de")
-	fmt.Println(b)
+	pi := problem.EstimatePiWithMonteCarlo(10000000)
+	fmt.Println(pi)
 }
