@@ -10,17 +10,32 @@
 package problem
 
 type OrderLog struct {
-	orders []int
+	orders  []int
+	currIdx int
+	N       int
 }
 
 func NewOrderLog(n int) *OrderLog {
-	return &OrderLog{orders: make([]int, n)}
+	return &OrderLog{
+		orders:  make([]int, n),
+		currIdx: -1,
+		N:       n,
+	}
 }
 
 func (ol *OrderLog) Record(id int) {
-	ol.orders = append(ol.orders, id)
+	ol.currIdx++
+	if ol.currIdx+1 > ol.N {
+		ol.currIdx = 0
+	}
+	ol.orders[ol.currIdx] = id
 }
 
-func (ol *OrderLog) GetLast(n int) []int {
-	return ol.orders[len(ol.orders)-n:]
+func (ol *OrderLog) GetLast(i int) int {
+	idx := ol.currIdx - i + 1
+	if idx < 0 {
+		idx += ol.N
+	}
+
+	return ol.orders[idx]
 }
